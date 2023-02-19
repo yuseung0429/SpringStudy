@@ -1,8 +1,11 @@
 package spring.di;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import spring.di.entity.Exam;
 import spring.di.ui.ExamConsole;
 
 public class Program {
@@ -14,6 +17,10 @@ public class Program {
 		ExamConsole console = context.getBean(ExamConsole.class);
 		console.print();
 		
+		List<Exam> exams = (List<Exam>)context.getBean("exams");
+		
+		for(Exam e : exams) 
+			System.out.printf("total = %d, average : %.2f\n", e.total(), e.avg());
 	}
 
 }
