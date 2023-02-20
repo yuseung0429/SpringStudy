@@ -1,5 +1,7 @@
 package spring.di.ui;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import spring.di.entity.Exam;
 
 public class GridExamConsole implements ExamConsole {
@@ -18,6 +20,7 @@ public class GridExamConsole implements ExamConsole {
 		System.out.printf("弛	average	弛%3.2f		弛\n", exam.avg());
 		System.out.println("戌式式式式式式式式式式式式戎");
 	}
+	@Autowired
 	@Override
 	public void setExam(Exam exam) {
 		this.exam = exam;
