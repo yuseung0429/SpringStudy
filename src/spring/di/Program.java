@@ -1,26 +1,29 @@
 package spring.di;
 
-import java.util.List;
-
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import spring.di.entity.Exam;
 import spring.di.ui.ExamConsole;
 
 public class Program {
 
 	public static void main(String[] args) {
-		// TODO 자동 생성된 메소드 스텁
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring/di/setting.xml");
-		//ExamConsole console = (ExamConsole)context.getBean("console");
-		ExamConsole console = context.getBean(ExamConsole.class);
-		console.print();
 		
-		List<Exam> exams = (List<Exam>)context.getBean("exams");
+		// Used XML
+		/*
+		 * ApplicationContext context = new ClassPathXmlApplicationContext("spring/di/setting.xml"); 
+		 * ExamConsole console = context.getBean(ExamConsole.class); 
+		 * console.print();
+		 */
 		
-		for(Exam e : exams) 
-			System.out.printf("total = %d, average : %.2f\n", e.total(), e.avg());
+		//Used Annotation
+		ApplicationContext context = new AnnotationConfigApplicationContext(ProgramConfig.class);
+		ExamConsole console1 = (ExamConsole)context.getBean("gridexamconsole");
+		ExamConsole console2 = (ExamConsole)context.getBean("inlineexamconsole");
+		console1.print();
+		console2.print();
+		
 	}
 
 }

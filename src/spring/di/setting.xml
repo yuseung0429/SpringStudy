@@ -10,22 +10,23 @@
 	http://www.springframework.org/schema/util/spring-util.xsd
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd">
-	<context:annotation-config></context:annotation-config>
-	<bean id="exam" class="spring.di.entity.Exam2023">
-		<!-- Construction injection 2 -->
-		<!-- <bean id="exam" class="spring.di.entity.Exam2023" p:kor="20" p:eng="40" 
-			p:math="60"> -->
-		<!-- Setter injection -->
-		<!-- <property name="kor" value="20"></property> <property name="eng" value="40"></property> 
-			<property name="math" value="60"></property> <property name="com" value="80"></property> -->
-		<!-- Construction injection 1 -->
+	<!-- 
+		<context:annotation-config></context:annotation-config>
+		<bean id="exam" class="spring.di.entity.Exam2023">
+		Construction injection 2
+		<bean id="exam" class="spring.di.entity.Exam2023" p:kor="20" p:eng="40" 
+			p:math="60">
+		Setter injection
+		<property name="kor" value="20"></property> <property name="eng" value="40"></property> 
+			<property name="math" value="60"></property> <property name="com" value="80"></property>
+		Construction injection 1
 		<constructor-arg index="0" value="20"></constructor-arg>
 		<constructor-arg index="1" value="40"></constructor-arg>
 		<constructor-arg index="3" value="80"></constructor-arg>
 		<constructor-arg index="2" value="60"></constructor-arg>
 	</bean>
 	
-<!-- 	Autowired & Qualifier -->
+	Autowired & Qualifier
 	<bean id="exam1" class="spring.di.entity.Exam2023">
 		<constructor-arg index="0" value="20"></constructor-arg>
 		<constructor-arg index="1" value="20"></constructor-arg>
@@ -40,23 +41,23 @@
 		<constructor-arg index="2" value="40"></constructor-arg>
 	</bean>
 	
-	
 	<bean id="console" class="spring.di.ui.GridExamConsole">
-<!-- 		<property name="exam" ref="exam"></property> -->
+		<property name="exam" ref="exam"></property>
 	</bean>
 
-	<!-- <Collection Creation 1> -->
-	<!-- <bean id="exams" class="java.util.ArrayList"> <constructor-arg> <list> 
+	<Collection Creation 1>
+	<bean id="exams" class="java.util.ArrayList"> <constructor-arg> <list> 
 		<bean class="spring.di.entity.Exam2023" p:kor="20" p:eng="40" p:math="60" 
-		p:com="80"></bean> <ref bean="exam"></ref> </list> </constructor-arg> </bean> -->
+		p:com="80"></bean> <ref bean="exam"></ref> </list> </constructor-arg> </bean>
 
-	<!-- <Collection Creation 2> -->
+	<Collection Creation 2>
 	<util:list id="exams" list-class="java.util.ArrayList">
 		<bean class="spring.di.entity.Exam2023" p:kor="20" p:eng="40"
 			p:math="60" p:com="80"></bean>
 		<ref bean="exam"></ref>
-	</util:list>
-
+	</util:list> -->
+	
+	<context:component-scan base-package="spring.di.entity, spring.di.ui"></context:component-scan>
 </beans>
 
 

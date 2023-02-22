@@ -1,10 +1,17 @@
 package spring.di.entity;
 
-public class Exam2023 implements Exam {
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
+public class Exam2023 implements Exam {
+	@Value("20")
 	private int kor;
+	@Value("40")
 	private int eng;
+	@Value("60")
 	private int math;
+	@Value("80")
 	private int com;
 	
 	public Exam2023() {};
