@@ -17,7 +17,6 @@ public class ProgramConfig {
 	{
 		return new GridExamConsole();
 	}
-	
 	@Bean
 	public ExamConsole inlineexamconsole()
 	{

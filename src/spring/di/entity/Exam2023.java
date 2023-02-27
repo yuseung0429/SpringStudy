@@ -31,7 +31,6 @@ public class Exam2023 implements Exam {
 
 	@Override
 	public float avg() {
-		// TODO 자동 생성된 메소드 스텁
 		return total() / 4.0f;
 	}
 	
