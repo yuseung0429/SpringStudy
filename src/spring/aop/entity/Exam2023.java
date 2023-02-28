@@ -18,12 +18,14 @@ public class Exam2023 implements Exam {
 	@Override
 	public int total() {
 		int result = kor+eng+math+com;
+		System.out.printf("[Primary concern] Total : %d\n", result);
 		return result;
 	}
 
 	@Override
 	public float avg() {
-		float result = total()/4.0f;
+		float result = kor+eng+math+com/4.0f;
+		System.out.printf("[Primary concern] Average : %.2f\n", result);
 		return result;
 	}
 
