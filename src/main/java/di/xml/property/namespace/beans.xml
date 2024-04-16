@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+	<bean id="birth" class="java.util.GregorianCalendar">
+		<constructor-arg value="1998" type="int"/>
+		<constructor-arg value="1" type="int"/>
+		<constructor-arg value="15" type="int"/>
+	</bean>
+		
+	<bean id="person" class="di.xml.property.namespace.Male" p:name = "홍길동" p:birth-ref = "birth"/>
+<!-- 	<bean id="person" class="di.xml.property.namespace.Female" p:name = "유관순" p:birth-ref = "birth"/> -->
+
+</beans>
