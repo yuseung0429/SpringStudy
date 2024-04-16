@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+	<bean id="birth" class="java.util.GregorianCalendar">
+		<constructor-arg value="1998" type="int"/>
+		<constructor-arg value="1" type="int"/>
+		<constructor-arg value="15" type="int"/>
+	</bean>
+		
+	<bean id="person" class="di.xml.property.subtag.Male">
+		<property name="name">	
+			<value>홍길동</value>
+		</property>
+		<property name="birth">
+			<ref bean="birth"></ref>
+		</property>
+	</bean>
+	
+<!-- 	<bean id="person" class="di.xml.property.subtag.Female"> -->
+<!-- 		<property name="name">	 -->
+<!-- 			<value>유관순</value> -->
+<!-- 		</property> -->
+<!-- 		<property name="birth"> -->
+<!-- 			<ref bean="birth"></ref> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+</beans>
