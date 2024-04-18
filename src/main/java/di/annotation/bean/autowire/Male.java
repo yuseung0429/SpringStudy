@@ -1,0 +1,17 @@
+package di.annotation.bean.autowire;
+
+import java.util.Calendar;
+
+import org.springframework.stereotype.Component;
+
+@Component
+class Male extends Person{
+
+	public Male(String name, Calendar birth) {
+		super(name, birth);
+	}
+
+	public String getGender() {
+		return "Male";
+	}
+}
