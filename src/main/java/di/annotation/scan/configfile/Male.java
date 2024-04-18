@@ -2,7 +2,6 @@ package di.annotation.scan.configfile;
 
 import java.util.Calendar;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
